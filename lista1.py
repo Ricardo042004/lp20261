@@ -1,4 +1,3 @@
-
 ''
 Exercícios sobre os comandos básicos em Python
 '''
@@ -80,7 +79,7 @@ def q11():
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
- def q12():
+def q12():
     num = float(input('Digite um número real: '))
     print(f'{num}*{num} = {num*num}')               # não recomendado
     print(f'math.pow({num},2) = {math.pow(num,2)}') # recomendado para float
