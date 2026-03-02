@@ -1,6 +1,15 @@
 '''
 Exercícios sobre os comandos básicos em Python
 '''
+def exemplocaso()        # serve apenas para valores conhecidos (poucos) e exatos.
+    estado_civil = 's'
+    match(estado_civil):
+        case 's' :
+            print('Solteiro')
+        case 'c' :
+            print('Casado')
+        case _:
+            print('Valor padrão ou desconhecido!') 
 
 #1. Faça um programa que imprima o seu nome.
 def q1():
