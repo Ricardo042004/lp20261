@@ -38,25 +38,48 @@ def exemploCaso():      # serve apenas para valores conhecidos (poucos) e exatos
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 def q1():
-    num1 = int(input('Digite um numero inteiro: '))
-    num2 = int(input('Digite um segundo numero inteiro: '))
-    if: num1 + num2 > 10
-        print('maior que 10')  
-    else:
-        print('menor que 10')
+    n1 = int(input('Digite um valor inteiro: '))
+    n2 = int(input('Digite outro valor inteiro: '))
+    soma = n1 + n2
+    if soma > 10:
+        print(soma)
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
 #   somando-se a ele mais 8, caso o valor somado seja menor ou igual a
 #   20, este deverá ser apresentado subtraindo-se 5.
+def q2():
+    n1 = int(input('Digite um valor inteiro: '))
+    n2 = int(input('Digite outro valor inteiro: '))
+    soma = n1 + n2
+    if soma > 20:
+        print(soma + 8)
+    else:
+        print(soma - 5)    
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q3():
+    num = int(input('Digite um inteiro: '))
+    if num % 3 == 0:
+        print('É múltiplo de 3')
+    else:
+        print('Não é múltiplo de 3')
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
-
+def q4():
+    num = int(input("Digite um número inteiro: "))
+    if num % 5 == 0:
+     print("é divisível por 5")
+    else:
+        print("Não é divisível por 5")  
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
-
+def q5():
+    num = int(input("Digite um número: "))
+    if num % 3 == 0 and num % 7 == 0: 
+        print("É divisível por 3 e 7")
+    else:
+        print("Não é divisível por 3 e 7")
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
@@ -67,6 +90,14 @@ def q1():
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+def q8():
+    num = int(input('Número inteiro: '))
+    if num < 20:
+        print('É menor do que 20')
+    elif num > 20:
+        print('É maior do que 20')
+    else:
+        print('É igual a 20')
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
@@ -81,14 +112,21 @@ def q1():
 #• Se é maior de idade
 #• Se é menor de idade
 #• Se é maior de 65 anos
-
+def q12():
+       idade = 65
+    if idade >= 18 and idade < 18: 
+        print('Maior de idade')
+    elif idade >= 65: 
+        print('Melhor idade')
+    else:            
+        print('Menor de idade')
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
 
-#14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
+#14. Faça um programa que permita entrar com o salário de uma pessoa e imprima 
 #desconto do INSS segundo a tabela seguir:
 #Salário Faixa de Desconto
 #Menor ou igual à R$600,00 Isento
