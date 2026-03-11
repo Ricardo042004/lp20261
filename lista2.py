@@ -1,6 +1,8 @@
 '''
 Exercícios sobre os comandos de condição em python
 '''
+import random 
+from datetime import datetime 
 
 def exemploSe():
     idade = 18
@@ -87,6 +89,12 @@ def q5():
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q7():
+    numero = random.randrange(100) # gera número aleatório entre 0 a 99 
+    if numero >= 20 and numero <= 50:
+        print(f'{numero} está no intervalo 20...50')
+    else:
+        print(f'{numero} está fora do intervalo de 20...50')
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
@@ -102,6 +110,13 @@ def q8():
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q9():
+    nascimento = int(input('Ano de nascimento:  '))
+    if 1900 <=nascimento<=datetime.now().year:
+        idade = datetime.now().year - nascimento
+        print(f'A pessoa tem {idade} anos!')
+    else:
+        print('Ano de nascimento inválido!')
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
@@ -113,13 +128,13 @@ def q8():
 #• Se é menor de idade
 #• Se é maior de 65 anos
 def q12():
-       idade = 65
-    if idade >= 18 and idade < 18: 
-        print('Maior de idade')
-    elif idade >= 65: 
-        print('Melhor idade')
-    else:            
-        print('Menor de idade')
+    idade = int(input("Qual é a idade? "))
+    if (65 >= idade >= 18):
+        print(f'É maior de idade.')
+    elif (idade < 18):
+        print(f'É menor de idade.')
+    elif (idade > 65):
+        print('É maior de 65 anos.')
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
