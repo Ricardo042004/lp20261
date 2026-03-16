@@ -3,6 +3,7 @@ Exercícios sobre os comandos de condição em python
 '''
 import random 
 from datetime import datetime 
+from util import inputfloat, inputint
 
 def exemploSe():
     idade = 18
@@ -120,8 +121,31 @@ def q9():
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+def q10():
+    a = inputint('Digite um número inteiro: ')
+    b = inputint('Digite um número inteiro: ')
+    c = inputint('Digite um número inteiro: ')
+    resultado=""
+    resultado += f"{a} {b} {c}" if a<b<c else ""
+    resultado += f"{a} {c} {b}" if a<c<b else ""
+    resultado += f"{b} {a} {c}" if b<a<c else ""
+    resultado += f"{b} {c} {a}" if b<c<a else ""
+    resultado += f"{c} {a} {b}" if c<a<b else ""
+    resultado += f"{c} {b} {a}" if c<b<a else ""
+    print(resultado)
+
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+ def q11():
+    maior = inputint('Digite um número inteiro: ')
+    numero = inputint('Digite um segundo número: ')
+    if numero > maior:
+        maior = numero
+    numero = inputint('Digite um terceiro número: ')
+    if numero > maior:
+        maior = numero
+    print(f'O maior número informado é {maior}')    
+ 
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
