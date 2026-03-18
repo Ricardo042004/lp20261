@@ -87,6 +87,14 @@ def q5():
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q6():
+    salario = float(input('Salário bruto: R$ '))
+    prestacao = float(input('Prestação para autorizar: R$ '))
+    prestacao_maxima = salario * 0.3
+    if prestacao > prestacao_maxima:
+        print('Empréstimo não autorizado')
+    else:
+        print('Empréstimo autorizado')
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
@@ -136,7 +144,7 @@ def q10():
 
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
- def q11():
+def q11():
     maior = inputint('Digite um número inteiro: ')
     numero = inputint('Digite um segundo número: ')
     if numero > maior:
@@ -144,7 +152,7 @@ def q10():
     numero = inputint('Digite um terceiro número: ')
     if numero > maior:
         maior = numero
-    print(f'O maior número informado é {maior}')    
+    print(f'O maior número informado é {maior}')     
  
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
@@ -163,7 +171,9 @@ def q12():
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
-#reprovação e as demais em prova final).
+#reprovação e as demais em prova final)
+
+    
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima 
 #desconto do INSS segundo a tabela seguir:
