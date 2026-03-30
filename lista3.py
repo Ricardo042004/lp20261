@@ -1,39 +1,59 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
- # def exemploPara(): # Quando se sabe a qtde de repetições
-    #for c in range(10): #0-9 Baseado em intervalo (inicio e fim)
-     #   print(c)
-   # for c in range(1,10): #1-9
-    #    print(c)
-   # for c in range(1,10,2): #1,3,5,7,9
+from util import inputint, inputfloat, gerar_palavra
+import random
 
- # def exemploEnquanto(): # Quando não se sabe quantas iterações serão necessárias
-   # opcao=-1
-   # while opcao != 0: #baseado em uma condição (True|False)
-        # opcao = int(input('Opção: '))
+def exemploPara(): # Quando se sabe a qtde de repetições
+    for c in range(10): #0-9 Baseado em intervalo (inicio e fim)
+        print(c)
+    for c in range(1,10): #1-9
+        print(c)
+    for c in range(1,10,2): #1,3,5,7,9
+        print(c)
+
+def exemploEnquanto(): # Quando não se sabe quantas iterações serão necessárias
+    opcao=-1
+    while opcao != 0: #baseado em uma condição (True|False)
+        opcao = inputint('Opção: ')
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
 def q1():
     for c in range(1,101):
-        print(c)
+        print(c, end=' ')
+
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 def q2():
-    for c in range (100,0,-2):
-        print(c)
+    for c in range(100,1,-2):
+        print(c, end=' ')
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 def q3():
-        for c in range(1,501,-5):
-            print(c)
+    for c in range(5,500,5):
+        print(c, end=' ')
 
 #4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+def q4():
+    for p in range(20):
+        nome = gerar_palavra()
+        idade = random.randrange(0,121)
+        sexo = random.choice(('M','F'))
+        if sexo == 'M' and idade >= 21:
+            print(f'A pessoa {nome} de sexo {sexo} tem {idade} anos.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+def q5():
+    multiplicando: int = inputint('Multiplicando: ')
+    multiplicador: int = inputint('Multiplicador: ')
+    produto: int = 0 
+    for _ in range(multiplicando):
+        produto += multiplicador
+    print(f'{multiplicando} * {multiplicador} = {produto}')
+        
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
