@@ -1,7 +1,6 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
-from util import inputint, inputfloat, gerar_palavra
 import random
 
 def exemploPara(): # Quando se sabe a qtde de repetições
@@ -89,7 +88,7 @@ def q7() -> None:
     print(diario)
     print(f'\nMédia da Turma: {media_geral/QTDE_ALUNOS:.1f}')
     
-#8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
+#8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas. 
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
 #Salário IRPF
@@ -119,11 +118,42 @@ def q7() -> None:
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
+def q11() -> None:
+    numero: int = 1
+    cont_100_200: int = 0
+    qtde_numeros: int = 0
+    while numero != 0:
+        numero = random.randrange(0,200)
+        # print(numero)
+        cont_100_200 += 1 if 100<=numero<=200 else 0
+        qtde_numeros += 1
+    print(f'De {qtde_numeros} gerados, {cont_100_200} estão no intervalo entre 100 e 200!')
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+def q12() -> None:
+    paisA: int = 5_000_000
+    paisB: int = 7_000_000
+    ano: int = 0
+    while paisA < paisB:
+        ano+=1
+        paisA = paisA*1.03
+        paisB = paisB*1.02
+    print(f'Ao final de {ano} anos, a população do país A superou a de B')
+    print(f'População do país A = {int(paisA)}')
+    print(f'População do país B = {int(paisB)}')
+
+#12.1 Faça uma simulação de investimento para que se descubra quantos anos serão necessários
+# para que se alcance a marca de 1 milhão de reais a partir de um saldo inicial, 
+# um aporte mensal regular e uma taxa de retorno mensal constante.
+def q121() -> None:
+    mes = 0
+    while saldo < 1_000_000:
+        mes += 1
+        saldo = saldo + aporte + saldo*taxa/100
+    print(f'Tempo do investimento: {int(mes/12)} anos e {mes%12} meses.')
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
