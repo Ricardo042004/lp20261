@@ -33,12 +33,25 @@ def q2() -> None:
 #2.1 Faça um programa que peça ao usuário para informar a qtde de caracteres
 # para a geração de uma senha aleatória. Ao final o programa deve exibir a
 # senha sugerida. (ASCII 40-126)
+def q21() -> None:
+    tamanho_senha: int = inputint('Informe a qtde de caracteres para senha (4-32): ', min=4, max=32)
+    senha: list[str] = [chr(random.randrange(40,127)) for _ in range(tamanho_senha)]
+    print(f'Senha gerada: {"".join(senha)}')
 
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
+def q3() -> None:
+    numeros: list[int] = [random.randrange(200) for _ in range(15)]
+    for posicao, numero in enumerate(numeros):  
+        print(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})')
 
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
+def q4() -> None:
+    numeros: list[int] = [random.randrange(200) for _ in range(8)]
+    print(numeros)
+    multiplos6: int = sum(1 for n in numeros if n % 6 == 0)
+    print(f'Qtde de números que são múltiplos de 6: {multiplos6}')
 
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
 #e armazene a média arredondada. Armazene também a situação do aluno: 1-
