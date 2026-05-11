@@ -32,9 +32,5 @@ def inputfloat(msg="Digite um número real: ",min=None,max=None):
         print(e)
     return -1
 
-    def gerar_palavra(min=4,max=10):
-    qtde_letras = random.randrange(min,max+1)
-    palavra=''
-    for _ in range(qtde_letras):
-        palavra += chr(random.randrange(65,91))
-    return palavra
+    
+    
