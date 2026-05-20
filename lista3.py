@@ -144,6 +144,44 @@ def q12() -> None:
     print(f'Ao final de {ano} anos, a população do país A superou a de B')
     print(f'População do país A = {int(paisA)}')
     print(f'População do país B = {int(paisB)}')
+#12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
+#ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
+#ano, fazer um programa que calcule e imprima o tempo necessário para que a
+ #população do país A ultrapasse a população do país B.(COM GRÁFICO) 
+def q12() -> None:
+    xA = []
+    yA = []
+    xB = []
+    yB = []
+    paisA: int = 5_000_000
+    paisB: int = 7_000_000
+    ano: int = 0
+    while paisA < paisB:
+        xA.append(ano)
+        yA.append(paisA)
+        xB.append(ano)
+        yB.append(paisB)
+        ano+=1
+        paisA = paisA*1.03
+        paisB = paisB*1.02
+    print(f'Ao final de {ano} anos, a população do país A superou a de B')
+    print(f'População do país A = {int(paisA)}')
+    print(f'População do país B = {int(paisB)}')
+
+    # Criar o gráfico
+    plt.ticklabel_format(style='plain', axis='y') # 'plain' mostra o número cheio
+    plt.plot(xA, yA, marker='.', linestyle='-', color='b', label='País A')
+    plt.plot(xB, yB, marker='.', linestyle='-', color='r', label='País B')
+
+    # Adicionar títulos e rótulos
+    plt.title('Crescimento Populacional dos Países A e B')
+    plt.xlabel('Ano')
+    plt.ylabel('População')
+    plt.legend(loc='best')
+
+    # Exibir
+    plt.show()
+
 
 #12.1 Faça uma simulação de investimento para que se descubra quantos anos serão necessários
 # para que se alcance a marca de 1 milhão de reais a partir de um saldo inicial, 
@@ -155,6 +193,35 @@ def q121() -> None:
         saldo = saldo + aporte + saldo*taxa/100
     print(f'Tempo do investimento: {int(mes/12)} anos e {mes%12} meses.')
 
+#12.1 Faça uma simulação de investimento para que se descubra quantos anos serão necessários
+# para que se alcance a marca de 1 milhão de reais a partir de um saldo inicial, 
+# um aporte mensal regular e uma taxa de retorno mensal constante.(COM GRÁFICO).
+def q121() -> None:
+    x = []
+    y = []
+    meta: int = inputint('Meta de investimento: R$ ',min=1000)
+    saldo: float = inputfloat('Saldo inicial: R$ ', min=0)
+    aporte: float = inputfloat('Aporte mensal: R$ ', min=0)
+    taxa: float = inputfloat('Taxa de retorno mensal (%): ', min=0.1)
+    mes: int = 0
+    while saldo < meta:
+        mes += 1
+        saldo = saldo + aporte + saldo*taxa/100
+        x.append(mes)
+        y.append(saldo)
+    print(f'Tempo do investimento: {int(mes/12)} anos e {mes%12} meses.')
+
+    # Criar o gráfico
+    plt.ticklabel_format(style='plain', axis='y') # 'plain' mostra o número cheio
+    plt.plot(x, y, linestyle='-', color='b')
+
+    # Adicionar títulos e rótulos
+    plt.title('Histórico do Saldo do Investimento')
+    plt.xlabel('Mês')
+    plt.ylabel('Saldo')
+
+    # Exibir
+    plt.show()
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
 #• número do consumidor
@@ -172,11 +239,22 @@ def q121() -> None:
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
 
-#15. Faça um programa que permita entrar com a idade de várias pessoas e
+#15.Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
-
+def q15() -> None:
+    menos_21 = 0
+    mais_50 = 0
+idade = int(input("Digite uma idade (ou 0 para encerrar): "))
+while idade != 0:
+ if idade < 21:
+    menos21 += 1
+ elif idade > 50:
+    mais50 += 1
+    idade = int(input("Digite outra idade (ou 0 para encerrar): "))
+print("\nQuantidade de pessoas com menos de 21 anos:", menos21)
+print("Quantidade de pessoas com mais de 50 anos:", mais50)
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
 #sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
 #números inteiros lidos. Para isso, basta subtrair o divisor ao dividendo, sucessivamente,
